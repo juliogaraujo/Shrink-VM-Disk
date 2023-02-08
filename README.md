@@ -29,8 +29,8 @@ Perform this procedure at your own risk.
 - Select the smaller disk and create the partion with the same order and size from the bigest one. Note: The last partition should be smaller.  
 
 3. Use dd command to copy the partitions:  
-`$ sudo dd if=/dev/sda1 of=/dev/sda2`
-`$ sudo dd if=/dev/sda2 of=/dev/sda2`
+`$ sudo dd if=/dev/sda1 of=/dev/sda2`  
+`$ sudo dd if=/dev/sda2 of=/dev/sda2`  
 > This process might take long time.
 
 ## Notes
