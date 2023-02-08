@@ -28,8 +28,6 @@ image: /dev/pve/vm-102-disk-0
 file format: raw
 virtual size: 120 GiB (128849018880 bytes)
 disk size: 0 B
-
-
 $ sudo qemu-img info /dev/pve/vm-102-disk-1
 image: /dev/pve/vm-102-disk-1
 file format: raw
