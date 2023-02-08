@@ -1,20 +1,27 @@
 
-> The procedure DOES NOT WORK!
+> Under progress....
 
 # Metod to shrink virtual machine disk
 
 ## Problem Description
-There are cases where it might be need to reduce the vm-disks because the lack of storage space for the proxmox server.
+There are cases where it might be need to reduce the vm-disks because the lack of storage space for the server
 For these cases the procedure below can be used to shrink the vm-disks, but keep in mind that you might need to have 
-at least enough space left in the proxmox storage to build a new smaller disk.
-This procedure has been tested with a Zabbix installed in the Proxmox Virtual Machine, and the disk was recuded from 
-120Gb to 62Gb.
+at least enough space left in the server storage to build a new smaller disk.
 
 ## WARNING
-This procedure might cause data loss, please be aware that there is no ga
-You understand the possible dangers and data loss that this procedure might cause and have been warned about them
+This procedure might cause data loss, please it is strongly recommended to perform a backup before start the procedure.  
+Perform this procedure at your own risk.
 
-1. Create a new disk with smaller size via Proxmox GUI
+## Procedure Environment
+- Proxmox 7.3-4
+- Zabbix installed at one Virtual Machine with 4 vCPU, 8Gb MEM, 120Gb Hard Disk.
+
+> The procedure can be used for any other type of environmen, please be aware to adapt the steps.
+
+## Steps
+
+1. Create a new disk with smaller size via Proxmox GUI.
+
 `#check via cmd both disks
 $ sudo qemu-img info /dev/pve/vm-102-disk-0
 image: /dev/pve/vm-102-disk-0
@@ -38,6 +45,6 @@ $ sudo dd if=/dev/sda2 of=/dev/sda2`
 > This process might take long time.
 
 ## Notes
-e2fsck -f -y -v -C 0 '/dev/sda2'
-resize2fs -p '/dev/sda2' 65933312K
+e2fsck -f -y -v -C 0 /dev/sda2
+resize2fs -p /dev/sda2 65933312K
 
