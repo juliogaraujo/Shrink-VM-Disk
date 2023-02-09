@@ -89,7 +89,7 @@ Number  Start   End     Size    File system  Name  Flags
         129GB   129GB   1032kB  Free Space
 ~~~
 
-**Reducing the biggest disk to 62G**  
+**Reducing the biggest disk to 61G**  
 Check file system for errors and (if possible) fix them
 ~~~
 sudo e2fsck -f -y -v -C 0 /dev/sda2
@@ -124,7 +124,7 @@ Pass 5: Checking group summary information
 ~~~
 shrink file system
 ~~~
-sudo resize2fs -p /dev/sda2 62G
+sudo resize2fs -p /dev/sda2 61G
 ~~~
 ~~~
 resize2fs 1.46.5 (30-Dec-2021)
@@ -163,7 +163,7 @@ Partition 2 has been deleted.
 Command (m for help): n
 Partition number (2-128, default 2): 
 First sector (4096-251658206, default 4096): 
-Last sector, +/-sectors or +/-size{K,M,G,T,P} (4096-251658206, default 251658206): +62G
+Last sector, +/-sectors or +/-size{K,M,G,T,P} (4096-251658206, default 251658206): +61G
 
 Created a new partition 2 of type 'Linux filesystem' and of size 62 GiB.
 Partition #2 contains a ext4 signature.
