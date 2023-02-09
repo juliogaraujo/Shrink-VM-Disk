@@ -265,8 +265,8 @@ webGUI: Node -> Virtual Machine -> Options -> Boot Order -> Edit -> Enable the n
 
 > Stop Virtual Machine.
 
-webGUI: Node -> Virtual Machine -> Hardware -> Detach
-webGUI: Node -> Virtual Machine -> Hardware -> Remove
+webGUI: Node -> Virtual Machine -> Hardware -> Detach  
+webGUI: Node -> Virtual Machine -> Hardware -> Remove  
 
 ## References
 https://pve.proxmox.com/pve-docs/pve-admin-guide.html  
