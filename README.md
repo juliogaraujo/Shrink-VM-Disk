@@ -249,7 +249,8 @@ Copy data partition
 ~~~
 sudo dd if=/dev/sda2 of=/dev/sdb2
 ~~~
-> This process might take long time. Use the cmd **kill -USR1 {dd pid}** to check the progress.  
+> This process might take long time. Use the cmd **kill -USR1 {dd pid}** to check the progress.
+
 Copy **only** the MBR.
 ~~~
 sudo dd if=/dev/sda of=./mbrsda.bkp bs=512 count=1  
