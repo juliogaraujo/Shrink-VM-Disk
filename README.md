@@ -1,6 +1,3 @@
-
-> Under progress....
-
 # Method to shrink virtual machine disk
 
 ## Problem Description
