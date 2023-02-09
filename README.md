@@ -261,6 +261,13 @@ sudo dd if=./mbrsda.bkp of=/dev/sdb bs=446 count=1
 
 webGUI: Node -> Virtual Machine -> Options -> Boot Order -> Edit -> Enable the new disk and drag it to the first boot.
 
+### 7. Delete the old disk.
+
+> Stop Virtual Machine.
+
+webGUI: Node -> Virtual Machine -> Hardware -> Detach
+webGUI: Node -> Virtual Machine -> Hardware -> Remove
+
 ## References
 https://pve.proxmox.com/pve-docs/pve-admin-guide.html  
 https://pve.proxmox.com/wiki/Storage  
