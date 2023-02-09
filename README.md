@@ -26,8 +26,10 @@ webGUI: Node -> Virtual Machine -> Hardware -> Add -> Hard Disk.
 
 ~~~
 
-2. Insert in the virtual CD an iso image of Ubuntu Desktop or any other linux dist that can contains parted command.  
-Open GParted and reduce the partion of the big disk for a size that fit over to the smaller disk.  
+2. Insert in the virtual CD/DVD an iso image of Ubuntu Desktop or any other linux dist that can contains parted and dd command.  
+
+
+> GParted can be used to reduce and create the partitions, but for simplist this procedure is going to use terminal command parted. 
  
 
 3. Use dd command to copy the partitions:  
