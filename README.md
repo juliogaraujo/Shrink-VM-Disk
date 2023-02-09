@@ -1,9 +1,8 @@
 # Method to shrink virtual machine disk
 
 ## Problem Description
-There are cases where it might be need to reduce the vm-disks because the lack of storage space for the server
-For these cases the procedure below can be used to shrink the vm-disks, but keep in mind that you might need to have 
-at least enough space left in the server storage to build a new smaller disk.
+There are cases where it might be need to reduce the vm-disks because the lack of storage space for the server.  
+For these cases the procedure below can be used to shrink the vm-disks, but keep in mind that you might need to have at least enough space left in the server storage to build a new smaller disk.
 
 ## WARNING
 This procedure might cause data loss, please it is strongly recommended to perform a backup before start the procedure.  
