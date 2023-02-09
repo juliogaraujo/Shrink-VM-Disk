@@ -21,6 +21,8 @@ Perform this procedure at your own risk.
 
 ## Steps
 
+> **NOTE** Change the size of the disk to fit your need
+
 ### 1. Create a new disk with smaller size via Proxmox GUI.  
 - webGUI: Node -> Virtual Machine -> Hardware -> Add -> Hard Disk.  
 
@@ -193,16 +195,66 @@ Number  Start   End     Size    File system  Name  Flags
         66.6GB  129GB   62.3GB  Free Space
 ~~~
 
+### 4. Create the partitions at new disk.
+~~~
+$ sudo fdisk /dev/sdb
 
+Welcome to fdisk (util-linux 2.37.2).
+Changes will remain in memory only, until you decide to write them.
+Be careful before using the write command.
 
+Device does not contain a recognized partition table.
+Created a new DOS disklabel with disk identifier 0x7676eeab.
 
+Command (m for help): g
+Created a new GPT disklabel (GUID: 9B268DB2-EED8-C54F-BDB8-30467C836073).
 
-### X. Use dd command to copy the partitions:  
+Command (m for help): n
+Partition number (1-128, default 1): 
+First sector (2048-130023390, default 2048): 
+Last sector, +/-sectors or +/-size{K,M,G,T,P} (2048-130023390, default 130023390): +1M
+
+Created a new partition 1 of type 'Linux filesystem' and of size 1 MiB.
+
+Command (m for help): t
+Selected partition 1
+Partition type or alias (type L to list all): 4
+Changed type of partition 'Linux filesystem' to 'BIOS boot'.
+
+Command (m for help): n
+Partition number (2-128, default 2): 
+First sector (4096-130023390, default 4096): 
+Last sector, +/-sectors or +/-size{K,M,G,T,P} (4096-130023390, default 130023390): 
+
+Created a new partition 2 of type 'Linux filesystem' and of size 62 GiB.
+
+Command (m for help): t
+Partition number (1,2, default 2): 
+Partition type or alias (type L to list all): 20
+
+Changed type of partition 'Linux filesystem' to 'Linux filesystem'.
+
+Command (m for help): w
+The partition table has been altered.
+Calling ioctl() to re-read partition table.
+Syncing disks.
+~~~
+
+### 5. Use dd command to copy the partitions:  
+Copy boot partition
 ~~~
 sudo dd if=/dev/sda1 of=/dev/sdb1
+~~~
+Copy data partition
+~~~
 sudo dd if=/dev/sda2 of=/dev/sdb2
 ~~~
-> This process might take long time.
+> This process might take long time. Use the cmd **kill -USR1 {dd pid}** to check the progress.  
+Copy **only** the MBR.
+~~~
+sudo dd if=/dev/sda of=./mbrsda.bkp bs=512 count=1  
+sudo dd if=./mbrsda.bkp of=/dev/sdb bs=446 count=1
+~~~
 
 ## References
 https://pve.proxmox.com/pve-docs/pve-admin-guide.html  
