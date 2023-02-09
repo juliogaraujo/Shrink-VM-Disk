@@ -257,6 +257,10 @@ sudo dd if=/dev/sda of=./mbrsda.bkp bs=512 count=1
 sudo dd if=./mbrsda.bkp of=/dev/sdb bs=446 count=1
 ~~~
 
+### 6. Turnoff the virtual machine and change the boot order to boot with new disk
+
+webGUI: Node -> Virtual Machine -> Options -> Boot Order -> Edit -> Enable the new disk and drag it to the first boot.
+
 ## References
 https://pve.proxmox.com/pve-docs/pve-admin-guide.html  
 https://pve.proxmox.com/wiki/Storage  
