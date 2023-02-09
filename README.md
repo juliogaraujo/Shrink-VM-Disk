@@ -16,17 +16,19 @@ Perform this procedure at your own risk.
 - Proxmox 7.3-4
 - Zabbix installed at one Virtual Machine with 4 vCPU, 8Gb MEM, 120Gb Hard Disk.
 
-> The procedure can be used for any other type of environmen, please be aware to adapt the steps.
+> The procedure can be used for any other type of environment, please be aware to adapt the steps.
 
 ## Steps
 
 1. Create a new disk with smaller size via Proxmox GUI.  
 webGUI: Node -> Virtual Machine -> Hardware -> Add -> Hard Disk.  
+~~~
 
+~~~
 
-2. Insert in the virtual CD an iso image of Ubuntu Desktop or any linux distru that can use Gparted.  
-- Open GParted and reduce the partion of the big disk for a size that fit over to the smaller disk.  
-- Select the smaller disk and create the partion with the same order and size from the bigest one. Note: The last partition should be smaller.  
+2. Insert in the virtual CD an iso image of Ubuntu Desktop or any other linux dist that can contains parted command.  
+Open GParted and reduce the partion of the big disk for a size that fit over to the smaller disk.  
+ 
 
 3. Use dd command to copy the partitions:  
 ~~~
