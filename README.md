@@ -21,16 +21,20 @@ Perform this procedure at your own risk.
 ## Steps
 
 1. Create a new disk with smaller size via Proxmox GUI.  
-webGUI: Node -> Virtual Machine -> Hardware -> Add -> Hard Disk.  
+- webGUI: Node -> Virtual Machine -> Hardware -> Add -> Hard Disk.  
 ~~~
 
 ~~~
 
-2. Insert in the virtual CD/DVD an iso image of Ubuntu Desktop or any other linux dist that can contains parted and dd command.  
+2. Insert in the virtual CD/DVD an iso image of Ubuntu Desktop or any other linux dist that can contains parted and dd command.
+- webGUI: Node -> Virtual Machine -> Hardware -> CD/DVD Drive -> Edit -> Select ISO image file.  
+- Start the VM and select to boot via CD/DVD: 
+- Open the terminal.
+~~~
 
+~~~
 
-> GParted can be used to reduce and create the partitions, but for simplist this procedure is going to use terminal command parted. 
- 
+> GParted can be used to reduce and create the partitions, but for simplest this procedure is going to use terminal command parted. 
 
 3. Use dd command to copy the partitions:  
 ~~~
