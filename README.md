@@ -89,7 +89,7 @@ Number  Start   End     Size    File system  Name  Flags
         129GB   129GB   1032kB  Free Space
 ~~~
 
-**Reducing the biggest disk to 61G**  
+**Reducing the biggest disk to 61G, should be less than the new disk!**  
 Check file system for errors and (if possible) fix them
 ~~~
 sudo e2fsck -f -y -v -C 0 /dev/sda2
@@ -238,6 +238,10 @@ Command (m for help): w
 The partition table has been altered.
 Calling ioctl() to re-read partition table.
 Syncing disks.
+~~~
+Format the partition to ext4
+~~~
+sudo mkfs.ext4 /dev/sdb2
 ~~~
 
 ### 5. Use dd command to copy the partitions:  
