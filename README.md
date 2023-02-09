@@ -259,5 +259,6 @@ sudo dd if=./mbrsda.bkp of=/dev/sdb bs=446 count=1
 
 ## References
 https://pve.proxmox.com/pve-docs/pve-admin-guide.html  
-https://pve.proxmox.com/wiki/Storage
-https://access.redhat.com/articles/1196333
+https://pve.proxmox.com/wiki/Storage  
+https://access.redhat.com/articles/11963333  
+https://www.cyberciti.biz/faq/howto-copy-mbr  
